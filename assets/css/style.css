@@ -1,0 +1,7 @@
+section {
+    background-image: url(../images/Game-of-Thrones.jpg);
+    /* background-size: auto; */
+    background-size: contain;
+    background-repeat: round;
+    min-height: 100vh;
+}
