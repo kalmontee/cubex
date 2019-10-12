@@ -6,10 +6,11 @@ body {
 section {
     background-image: url(../images/Game-of-Thrones.jpg);
     /* background-size: auto; */
-    background-size: contain;
+    background-size: cover;
     background-repeat: round;
     min-height: 100vh;
     height: auto;
+    padding: 60px 0;
     /* position: relative; */
 }
 
@@ -27,7 +28,7 @@ section {
     font-family: 'Cinzel Decorative', cursive;
     font-size: 60px;
     font-weight: bold;
-    /* color: #fff; */
+    margin: 30px 10px;
     color: black;
 }
 
@@ -43,7 +44,7 @@ section {
 }
 
 ul li {
-    font-size: 30px;
+    font-size: 35px;
     margin: 20px;
     cursor: pointer;
 }
