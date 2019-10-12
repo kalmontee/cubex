@@ -9,7 +9,11 @@ var count = 15;
 var slideIndex = 0;
 
 
-// create an array of all the questions and answers
-
+// target all your questions from 2-6 and set to them to .hide()
+$("#question-2").hide();
+$("#question-3").hide();
+$("#question-4").hide();
+$("#question-5").hide();
+$("#question-6").hide();
 
 // create a function to start the game
