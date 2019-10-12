@@ -1,7 +1,53 @@
+body {
+    font-family: 'News Cycle', sans-serif;
+    margin: auto;
+}
+
 section {
     background-image: url(../images/Game-of-Thrones.jpg);
     /* background-size: auto; */
     background-size: contain;
     background-repeat: round;
     min-height: 100vh;
+    height: auto;
+    /* position: relative; */
+}
+
+.container {
+    text-align: center;
+    background-color: rgb(246, 252, 166);
+    color: black;
+    width: 960px;
+    padding: 20px;
+    overflow: auto;
+    margin: 0 auto;
+}
+
+#title {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 60px;
+    font-weight: bold;
+    /* color: #fff; */
+    color: black;
+}
+
+#question {
+    font-size: 40px;
+    margin: 10px;
+}
+
+.time {
+    font-size: 30px;
+    margin: 10px;
+}
+
+ul li {
+    font-size: 30px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+ul li:hover {
+    background-color: lightsteelblue;
+    color: rgb(77, 77, 230);
 }
