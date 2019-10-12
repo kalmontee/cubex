@@ -17,3 +17,13 @@ $("#question-5").hide();
 $("#question-6").hide();
 
 // create a function to start the game
+
+var remainingTime = setInterval(function() {
+    $("#countDown").text(count);
+    count -= 1;
+    if (count <= 0) {
+        clearInterval(remainingTime);
+        $(".time").text('TIMES UP!');
+        // alert('Time is up!');
+    }
+}, 1500);
