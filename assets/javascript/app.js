@@ -18,6 +18,7 @@ $("#question-5").hide();
 $("#question-6").hide();
 
 // create a function to start the game
+// inside start game function play the game-of-thrones intro
 // $("#start-game").click($("#question-1".show()));
 
 
