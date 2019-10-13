@@ -5,7 +5,6 @@ var wrongAnswer;
 var question;
 var unAnswer;
 var images;
-var count = 15;
 var slideIndex = 0;
 
 
@@ -18,12 +17,18 @@ $("#question-6").hide();
 
 // create a function to start the game
 
-var remainingTime = setInterval(function() {
-    $("#countDown").text(count);
-    count -= 1;
-    if (count <= 0) {
-        clearInterval(remainingTime);
-        $(".time").text('TIMES UP!');
-        // alert('Time is up!');
-    }
-}, 1500);
+
+// Call this function later
+// countDown(); 
+
+function countDown() {
+    var count = 15;
+    var remainingTime = setInterval(function() {
+        $("#countDown").text(count);
+        count -= 1;
+        if (count <= 0) {
+            clearInterval(countDown());
+            $(".time").text('TIMES UP!');
+        }
+    }, 1500);
+}
