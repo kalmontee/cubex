@@ -11,21 +11,30 @@ var slideIndex = 0;
 // target all your questions from 2-6 and set to them to .hide()
 $("#intro");
 $("#question-1").hide()
-$("#question-2").hide();
-$("#question-3").hide();
-$("#question-4").hide();
-$("#question-5").hide();
-$("#question-6").hide();
+    // $("#question-2").hide();
+    // $("#question-3").hide();
+    // $("#question-4").hide();
+    // $("#question-5").hide();
+    // $("#question-6").hide();
 
 // create a function to start the game
-// inside start game function play the game-of-thrones intro
-// $("#start-game").click($("#question-1".show()));
+// inside start game function play the game-of-thrones intro (audio.play())
+$("#start-game").on('click', function() {
+    $("#question-1").show()
+
+    // begin the coutDown
+    countDown();
+});
 
 
 // Call this function later
 // countDown(); 
 
 function countDown() {
+
+    // Remove the intro section of the game.
+    $("#intro").hide();
+
     var count = 15;
     var remainingTime = setInterval(function() {
         $("#countDown").text(count);
