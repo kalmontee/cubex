@@ -7,6 +7,7 @@ var unAnswer;
 var images;
 var slideIndex = 0;
 
+var audio = new Audio("game-of-thrones.mp3");
 
 // target all your questions from 2-6 and set to them to .hide()
 $("#intro");
@@ -18,9 +19,11 @@ $("#question-1").hide()
     // $("#question-6").hide();
 
 // create a function to start the game
-// inside start game function play the game-of-thrones intro (audio.play())
 $("#start-game").on('click', function() {
-    $("#question-1").show()
+    // inside start game function play the game-of-thrones intro (audio.play())
+    audio.play();
+    // Show question the container. 
+    $("#question-1").show();
 
     // begin the coutDown
     countDown();
