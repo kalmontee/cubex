@@ -53,3 +53,9 @@ ul li:hover {
     color: rgb(77, 77, 230);
     font-weight: bold;
 }
+
+#start-game {
+    width: 50%;
+    margin: 0 auto;
+    justify-content: center;
+}
