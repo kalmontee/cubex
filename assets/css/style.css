@@ -53,6 +53,11 @@ section {
     margin: 0 auto;
 }
 
+#options:hover {
+    /* color: rgb(77, 77, 230); */
+    /* font-weight: 500; */
+}
+
 #start-game {
     width: 50%;
     margin: 0 auto;
@@ -70,4 +75,20 @@ section {
 #answers:hover {
     color: rgb(77, 77, 230);
     font-weight: bold;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+    /* font-size: 20px; */
+}
+
+button:hover {
+    color: rgb(77, 77, 230);
+    font-weight: 500;
+}
+
+#status {
+    font-size: 30px;
+    color: rgb(77, 77, 230);
 }
