@@ -43,15 +43,14 @@ section {
     color: rgb(253, 42, 42);
 }
 
-ul li {
-    font-size: 35px;
-    margin: 20px;
+#options {
+    /* margin: 0 auto; */
+    display: flex;
+    flex-flow: column;
     cursor: pointer;
-}
-
-ul li:hover {
-    color: rgb(77, 77, 230);
-    font-weight: bold;
+    font-size: 35px;
+    width: 50%;
+    margin: 0 auto;
 }
 
 #start-game {
