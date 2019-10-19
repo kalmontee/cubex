@@ -1,13 +1,13 @@
 // Global Variables
-var userInput;
-var correctAnswer;
-var wrongAnswer;
-var unAnswer;
-var images;
-var slideIndex = 0;
+// var userInput;
+// var correctAnswer;
+// var wrongAnswer;
+// var unAnswer;
+// var images;
+// var slideIndex = 0;
 
 // keep this
-// var audio = new Audio("game-of-thrones.mp3");
+var audio = new Audio("game-of-thrones.mp3");
 
 var trivia = {
     // declare variables inside of the object
@@ -17,33 +17,35 @@ var trivia = {
     countDown: 20,
     images: null,
     current: 0,
+    currentQuestion: 1,
+    currentChoices: 0,
 
     // questions, choices and answers
     questions: {
-        q1: "Who was responsible for the creation of the Night King?",
-        q2: "What was Hodor called before he got his tragic door-holding nickname?",
-        q3: "Dany's dragons are (or were) called Drogon, Viserion and _____",
-        q4: "Where is the House of Black and White, the training temple of the Faceless Men?",
-        q5: "Who was Ned Stark's predecessor as Robert Baratheon's Hand?",
-        q6: "How many kings and queens of Westeros did Lord Vary's serve?",
+        1: "Who was responsible for the creation of the Night King?",
+        2: "What was Hodor called before he got his tragic door-holding nickname?",
+        3: "Dany's dragons are (or were) called Drogon, Viserion and _____",
+        4: "Where is the House of Black and White, the training temple of the Faceless Men?",
+        5: "Who was Ned Stark's predecessor as Robert Baratheon's Hand?",
+        6: "How many kings and queens of Westeros did Lord Vary's serve?",
     },
 
     choices: {
-        q1: ["The Lord of Light", "The Drowned God", "The First Men", "The Children of the Forest"],
-        q2: ["Myrys", "Wylis", "Horys", "Gladys"],
-        q3: ["Dougal", "Vhagar", "Raegal", "Balerion"],
-        q4: ["Qarth", "Bravos", "Meeren", "No one knows"],
-        q5: ["Jamie Lannister", "Jon Arryn", "Tywin Lannister"],
-        q6: [2, 3, , 4, 5]
+        1: ["The Lord of Light", "The Drowned God", "The First Men", "The Children of the Forest"],
+        2: ["Myrys", "Wylis", "Horys", "Gladys"],
+        3: ["Dougal", "Vhagar", "Raegal", "Balerion"],
+        4: ["Qarth", "Bravos", "Meeren", "No one knows"],
+        5: ["Jamie Lannister", "Jon Arryn", "Tywin Lannister"],
+        6: [2, 3, , 4, 5]
     },
 
     answers: {
-        q1: "The Children of the Forest",
-        q2: "Wylis",
-        q3: "Raegal",
-        q4: "Bravos",
-        q5: "Jon Arryn",
-        q6: 3,
+        1: "The Children of the Forest",
+        2: "Wylis",
+        3: "Raegal",
+        4: "Bravos",
+        5: "Jon Arryn",
+        6: 3,
     },
 }
 
@@ -51,11 +53,6 @@ var trivia = {
 // target all your questions from 2-6 and set to them to .hide()
 $("#intro");
 $("#question-1").hide()
-    // $("#question-2").hide();
-    // $("#question-3").hide();
-    // $("#question-4").hide();
-    // $("#question-5").hide();
-    // $("#question-6").hide();
 
 // create a function to start the game
 $("#start-game").on('click', function() {
@@ -64,10 +61,37 @@ $("#start-game").on('click', function() {
 
     // Show question the container. 
     $("#question-1").show();
+    // $('#start-game').hide();
+
+    questions();
 
     // begin the coutDown
     countDown();
 });
+
+function questions() {
+    // Display the ID question
+    $('#question').html(trivia.questions[trivia.currentQuestion]);
+    trivia.currentQuestion++;
+
+    // $('#options').html(trivia.choices[trivia.currentChoices]);
+    // $('#options').html(trivia.choices[trivia.currentChoices].join('<br>'));
+    // trivia.currentChoices++;
+
+    var choicesArr = Object.values(trivia.choices)[trivia.currentChoices];
+
+    // Loop through the choices and display it in a button.
+    for (var i = 0; i < choicesArr.length; i++) {
+        var button = $('<button>');
+        button.text(choicesArr[i]);
+        $('#options').append(button);
+    }
+
+    // test
+    console.log(trivia.questions[trivia.currentQuestion]);
+    console.log(trivia.choices[trivia.currentChoices]);
+    // console.log(choicesArr);
+}
 
 
 var count = 21;
@@ -76,7 +100,6 @@ var intervalId;
 function countDown() {
     clearInterval(intervalId);
     intervalId = setInterval(decrement, 1000);
-    $("#intro").hide();
 
 }
 
@@ -105,9 +128,7 @@ function stop() {
 
 function nextQuestion() {
 
-    $("#question").html(questions[0]);
-
-
+    // $("#question").html(questions[0]);
 
     // if countDown is equal to 0
     // display the correct answer
