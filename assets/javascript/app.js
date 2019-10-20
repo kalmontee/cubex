@@ -7,6 +7,10 @@ var correctAnswer = 0;
 var wrongAnswer = 0;
 var unAnswer = 0;
 
+// event listener
+$('#start-game').click(startgame);
+$('#options').on('click', 'button', optionClicked);
+
 var trivia = {
     images: ['images/Arya.gif', "images/changing-faces.gif", "images/dracarys.gif", "images/ned-stark.gif", "images/night-king.gif", "images/Tyrion.gif"],
     currentQuestion: 0,
