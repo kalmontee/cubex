@@ -165,13 +165,3 @@ function displayResults() {
 
     setTimeout(showQuestions, 3000);
 }
-
-// dont need a stop function...
-function stop() {
-    // clearInterval(intervalId);
-    // triviaGame();
-    // decrement();
-    // showQuestions();
-    displayResults();
-    trivia.currentQuestion++;
-}
