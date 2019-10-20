@@ -1,6 +1,6 @@
 // Audio
 var audio = new Audio("game-of-thrones.mp3");
-var count = 11;
+var count = 15;
 var intervalId;
 var clockRunning = false;
 var correctAnswer = 0;
@@ -12,7 +12,7 @@ $('#start-game').click(startGame);
 $('#options').on('click', 'button', optionClicked);
 
 var trivia = {
-    images: ['images/Arya.gif', "images/changing-faces.gif", "images/dracarys.gif", "images/ned-stark.gif", "images/night-king.gif", "images/Tyrion.gif"],
+    images: ["images/night-king.gif", 'images/Arya.gif', "images/dracarys.gif", "images/changing-faces.gif", "images/ned-stark.gif", "images/Tyrion.gif"],
     currentQuestion: 0,
 
     // questions, choices and answers
@@ -45,8 +45,25 @@ var trivia = {
 }
 
 function startGame() {
+    // reset purposes
+    var intervalId;
+    var clockRunning = false;
+    var count = 15;
+    var correctAnswer = 0;
+    var wrongAnswer = 0;
+    var unAnswer = 0;
+    trivia.currentQuestion = 0;
+    clearInterval(intervalId);
+
+    // set results to blank
+    $('#ending').html('');
+    $('#correct').html('');
+    $('#incorrect').html('');
+    $('#unAnswer').html('');
+
+
     // inside start game function play the game-of-thrones intro (audio.play())
-    // audio.play();
+    audio.play();
 
     // hide the start button once the user press start
     $('#start-game').hide();
@@ -160,7 +177,7 @@ function timeRunning() {
 
         // if all the questions have been display show the results
     } else if (trivia.currentQuestion === trivia.questions.length) {
-        $('#ending').html('Thank you for playing!');
+        $('#ending').html('Thank you for playing! WINTER IS COMING!!');
         $('#correct').html('Correct: ' + correctAnswer);
         $("#incorrect").html('Wrong: ' + wrongAnswer);
         $('#unAnswer').html('Unanswered: ' + unAnswer);
