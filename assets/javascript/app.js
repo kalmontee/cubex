@@ -109,7 +109,8 @@ function optionClicked() {
         // add +1 to correctAnswer
         correctAnswer++
 
-        // set timeout to display results
+        // set timeout to display results for one seconds
+        setTimeout(displayResults, 1000);
 
         // display a gif image
 
@@ -124,12 +125,12 @@ function optionClicked() {
         clearInterval(intervalId);
         clockRunning = false;
 
-        // set timeout to display results
-
+        // set timeout to display results for one second
+        setTimeout(displayResults, 1000);
         // display a gif image
 
         // Display the correct answer
-        $('#status').html('<h3>The correct answer was ' + trivia.answers[trivia.currentQuestion] + '</h3>');
+        $('#status').html('<h3>Incorrect!!! The answer was ' + trivia.answers[trivia.currentQuestion] + '</h3>');
     }
 }
 
@@ -143,6 +144,7 @@ function timeRunning() {
 
         // clockRunning to false
         clockRunning = false;
+
     } else if (count === -1) {
         // add +1 to unAnswer
         unAnswer++;
