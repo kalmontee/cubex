@@ -115,7 +115,7 @@ function optionClicked() {
         // display a gif image
 
         // display the correct answer
-        $('#status').html('<h3>Correct!!!! ' + trivia.answers[trivia.currentQuestion] + '</h3>');
+        $('#status').html('<h3>Correct!!!! ' + trivia.answers[trivia.currentQuestion] + '</h3>').hide();
 
     } else {
         // add +1 to wrongAnswer
@@ -130,7 +130,7 @@ function optionClicked() {
         // display a gif image
 
         // Display the correct answer
-        $('#status').html('<h3>Incorrect!!! The answer was ' + trivia.answers[trivia.currentQuestion] + '</h3>');
+        $('#status').html('<h3>Incorrect!!! The answer was ' + trivia.answers[trivia.currentQuestion] + '</h3>').hide();
     }
 }
 
@@ -156,9 +156,20 @@ function timeRunning() {
         timeoutId = setTimeout(displayResults, 1000);
 
         // display the status "Ran out of time"
-        $('#status').html('<h3>You ran out of time!! The answer was ' + trivia.answers[trivia.currentQuestion] + '</h3>');
+        $('#status').html('<h3>You ran out of time!! The answer was ' + trivia.answers[trivia.currentQuestion] + '</h3>').hide();
 
         // if all the questions have been display show the results
+    } else if (trivia.currentQuestion === trivia.questions.length) {
+        $('#ending').html('Thank you for playing!');
+        $('#correct').html('Correct: ' + correctAnswer);
+        $("#incorrect").html('Wrong: ' + wrongAnswer);
+        $('#unAnswer').html('Unanswered: ' + unAnswer);
+
+        // show start-game button to begin a new trivia
+        $('#start-game').show();
+
+        // hide trivia section
+        $('#trivia').hide();
     }
 }
 
@@ -167,6 +178,7 @@ function displayResults() {
     $('#question').hide();
     $('#options').hide();
     $('.time').hide();
+    $('#status').show();
 
     // increment to next currentQuestion
     trivia.currentQuestion++;
