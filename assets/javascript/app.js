@@ -93,53 +93,32 @@ function showQuestions() {
     console.log(trivia.answers[trivia.currentQuestion]);
 }
 
-function triviaGame() {
+function timeRunning() {
+    // Display the countDown
+    if (count > -1 && trivia.currentQuestion < trivia.questions.length) {
+        $("#countDown").text("Time remaining: " + count + ' seconds');
 
-    $('#options').on('click', 'button', function() {
-        console.log('It works'); // test
+        // decrement the count
+        count--;
 
-        // begin the coutDown
-        // countDown();
+        // clockRunning to false
+        clockRunning = false;
+    } else if (count === -1) {
+        // add +1 to unAnswer
+        unAnswer++;
 
-        // Check if the answer is correct as user input
-        var user_input = $(this).attr("answer");
-        if (trivia.answers[trivia.currentQuestion] === user_input) {
+        clearInterval(intervalId);
+        clockRunning = false;
 
-            // display the status
-            // displayResults();
+        // setTimeout for one second to display the correct answer
+        timeoutId = setTimeout(results, 1000);
 
-            // setTimeout(showQuestions, 2000);
-            // setTimeout(displayResults, 4000);
+        // display the status "Ran out of time"
+        $('#status').html('<h3>You ran out of time!! The answer was ' + trivia.answers[trivia.currentQuestion] + '</h3>');
 
-            // $('<div>').html('<img src=' + trivia.images[0] + ">");
-            // $("#image-holder").html("<img src=" + trivia.images[0] + "width='400px'>");
-            $('#status').html('<h3>Correct!!!! ' + trivia.answers[trivia.currentQuestion] + '</h3>');
-
-            // stop the setInterval function
-            stop();
-            stopTimer = clearInterval(intervalId);
-
-            // add +1 to correct answers
-            // trivia.correctAnswer++;
-        } else {
-            // displayResults();
-            // $('#status').html('<h3>Better luck next time! ' + trivia.answers[trivia.currentQuestion] + '</h3>');
-
-            // stop the setInterval function
-            stop();
-            // displayResults();
-            stopTimer = clearInterval(intervalId);
-
-            // call setTimeout function
-            var status = $('#status').html('<h3>The correct answer was ' + trivia.answers[trivia.currentQuestion] + '</h3>');
-            // var hideStatus = setTimeout(status, 3000);
-
-            // add +1 to wrong answers
-            // trivia.wrongAnswer++;
-        }
-    });
+        // if all the questions have been display show the results
+    }
 }
-
 
 
 function displayResults() {
