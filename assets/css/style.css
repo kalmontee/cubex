@@ -53,28 +53,10 @@ section {
     margin: 0 auto;
 }
 
-#options:hover {
-    /* color: rgb(77, 77, 230); */
-    /* font-weight: 500; */
-}
-
 #start-game {
     width: 50%;
     margin: 0 auto;
     justify-content: center;
-}
-
-#answers {
-    font-size: 35px;
-    margin: 20px;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-}
-
-#answers:hover {
-    color: rgb(77, 77, 230);
-    font-weight: bold;
 }
 
 button {
@@ -91,4 +73,14 @@ button:hover {
 #status {
     font-size: 30px;
     color: rgb(77, 77, 230);
+}
+
+#ending {
+    font-size: 30px;
+}
+
+#correct,
+#incorrect,
+#unAnswer {
+    font-size: 25px;
 }
