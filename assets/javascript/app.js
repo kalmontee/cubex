@@ -99,6 +99,8 @@ function optionClicked() {
     // setTimeout id variable;
     var timeoutId;
 
+    var user_input = $(this).attr("answer");
+
     // userInput will declare whatever choice the user clicked on the answer
     if (trivia.answers[trivia.currentQuestion] === user_input) {
         // stop the count down from running
