@@ -93,6 +93,40 @@ function showQuestions() {
     console.log(trivia.answers[trivia.currentQuestion]);
 }
 
+function optionClicked() {
+    trivia.answers[trivia.currentQuestion];
+
+    // setTimeout id variable;
+    var timeoutId;
+
+    // userInput will declare whatever choice the user clicked on the answer
+    if (trivia.answers[trivia.currentQuestion] === user_input) {
+        // stop the count down from running
+        clearInterval(intervalId);
+
+        // add +1 to correctAnswer
+        correctAnswer++
+
+        // set timeout to display results
+
+        // display a gif image
+
+        // display the correct answer
+        $('#status').html('<h3>Correct!!!! ' + trivia.answers[trivia.currentQuestion] + '</h3>');
+
+    } else {
+        // add +1 to wrongAnswer
+        wrongAnswer++;
+
+        // set timeout to display results
+
+        // display a gif image
+
+        // Display the correct answer
+        $('#status').html('<h3>The correct answer was ' + trivia.answers[trivia.currentQuestion] + '</h3>');
+    }
+}
+
 function timeRunning() {
     // Display the countDown
     if (count > -1 && trivia.currentQuestion < trivia.questions.length) {
@@ -111,7 +145,7 @@ function timeRunning() {
         clockRunning = false;
 
         // setTimeout for one second to display the correct answer
-        timeoutId = setTimeout(results, 1000);
+        timeoutId = setTimeout(displayResults, 1000);
 
         // display the status "Ran out of time"
         $('#status').html('<h3>You ran out of time!! The answer was ' + trivia.answers[trivia.currentQuestion] + '</h3>');
@@ -120,52 +154,19 @@ function timeRunning() {
     }
 }
 
-
 function displayResults() {
     // hide the question, options, and countDown
     $('#question').hide();
     $('#options').hide();
     $('.time').hide();
 
-    // Display a countDown when the next question is going to appear. 5 seconds max.
-    // stop();
-    stopTimer = clearInterval(intervalId);
-    // trivia.currentQuestion++;
+    // increment to next currentQuestion
+    trivia.currentQuestion++;
 
     setTimeout(showQuestions, 3000);
-    // count = 11;
 }
 
-function decrement() {
-    // decrease the number by one
-    count--;
-
-    // Diplsay the count down in the #countDown
-    $("#countDown").text("Time remaining " + count + ' seconds');
-
-    // if countDown is equal to 0
-    if (count === 0) {
-        // tell the user time is up!
-        // $(".time").text('TIMES UP!');
-
-        // call the stop function
-        stop();
-        stopTimer = clearInterval(intervalId);
-
-        // display the correct answer
-        displayResults();
-        $('#status').html('<h3>The correct answer was ' + trivia.answers[trivia.currentQuestion] + '</h3>');
-
-        // display the next question
-        trivia.currentQuestion++;
-
-        // add a +1 to unAnswer
-        trivia.unAnswer++;
-    }
-    console.log(count);
-}
-
-
+// dont need a stop function...
 function stop() {
     // clearInterval(intervalId);
     // triviaGame();
