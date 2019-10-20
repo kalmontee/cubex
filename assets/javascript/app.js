@@ -8,7 +8,7 @@ var wrongAnswer = 0;
 var unAnswer = 0;
 
 // event listener
-$('#start-game').click(startgame);
+$('#start-game').click(startGame);
 $('#options').on('click', 'button', optionClicked);
 
 var trivia = {
@@ -44,18 +44,19 @@ var trivia = {
     ]
 }
 
-// function to start the game
-$("#start-game").on('click', function() {
+function startGame() {
     // inside start game function play the game-of-thrones intro (audio.play())
     // audio.play();
 
-    // Hide start button
+    // hide the start button once the user press start
     $('#start-game').hide();
 
-    triviaGame();
-    showQuestions();
+    // Show the question section
+    $('#trivia').show();
 
-});
+    // Show the first question
+    showQuestions();
+}
 
 function triviaGame() {
 
