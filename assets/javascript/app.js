@@ -120,6 +120,10 @@ function optionClicked() {
         // add +1 to wrongAnswer
         wrongAnswer++;
 
+        // stop the timer once user pressed the wrong answer
+        clearInterval(intervalId);
+        clockRunning = false;
+
         // set timeout to display results
 
         // display a gif image
