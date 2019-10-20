@@ -1,14 +1,13 @@
 // Audio
 var audio = new Audio("game-of-thrones.mp3");
-var stopTimer;
-var intervalId;
 var count = 11;
+var intervalId;
+var clockRunning = false;
+var correctAnswer = 0;
+var wrongAnswer = 0;
+var unAnswer = 0;
 
 var trivia = {
-    // Global variables inside of the object
-    correctAnswer: 0,
-    wrongAnswer: 0,
-    unAnswer: 0,
     images: ['images/Arya.gif', "images/changing-faces.gif", "images/dracarys.gif", "images/ned-stark.gif", "images/night-king.gif", "images/Tyrion.gif"],
     currentQuestion: 0,
 
@@ -93,7 +92,7 @@ function triviaGame() {
 
             // call setTimeout function
             var status = $('#status').html('<h3>The correct answer was ' + trivia.answers[trivia.currentQuestion] + '</h3>');
-            var hideStatus = setTimeout(status, 3000);
+            // var hideStatus = setTimeout(status, 3000);
 
             // add +1 to wrong answers
             // trivia.wrongAnswer++;
@@ -139,7 +138,7 @@ function displayResults() {
     // trivia.currentQuestion++;
 
     setTimeout(showQuestions, 3000);
-    count = 11;
+    // count = 11;
 }
 
 function decrement() {
