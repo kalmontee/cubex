@@ -58,6 +58,41 @@ function startGame() {
     showQuestions();
 }
 
+function showQuestions() {
+    $('#question').show();
+    $('#options').show();
+    $('.time').show();
+
+    // Set the count down for each question
+    count = 15;
+
+    // To avoid the timer speed up
+    if (!clockRunning) {
+        intervalId = setInterval(timeRunning, 1000);
+    }
+
+    // Display the questions
+    $('#question').html(trivia.questions[trivia.currentQuestion]);
+
+    var choicesArr = trivia.choices[trivia.currentQuestion];
+
+    // To avoid all the questions display at once
+    $('#options').empty();
+
+    // Loop through the choices and display it as a button.
+    for (var i = 0; i < choicesArr.length; i++) {
+        var button = $('<button>');
+        button.text(choicesArr[i]);
+        button.attr("answer", choicesArr[i]);
+        $('#options').append(button);
+    }
+
+    // for testing purposes only
+    console.log(trivia.questions[trivia.currentQuestion]);
+    console.log(trivia.choices[trivia.currentQuestion]);
+    console.log(trivia.answers[trivia.currentQuestion]);
+}
+
 function triviaGame() {
 
     $('#options').on('click', 'button', function() {
@@ -105,31 +140,7 @@ function triviaGame() {
     });
 }
 
-function showQuestions() {
-    $('#question').show();
-    $('#options').show();
-    $('.time').show();
 
-    // Stop timer
-    intervalId = setInterval(decrement, 1000);
-
-    $('#question').html(trivia.questions[trivia.currentQuestion]);
-
-    var choicesArr = trivia.choices[trivia.currentQuestion];
-
-    $('#options').empty();
-    // Loop through the choices and display it as a button.
-    for (var i = 0; i < choicesArr.length; i++) {
-        var button = $('<button>');
-        button.text(choicesArr[i]);
-        button.attr("answer", choicesArr[i]);
-        $('#options').append(button);
-    }
-
-    console.log(trivia.questions[trivia.currentQuestion]);
-    console.log(trivia.choices[trivia.currentQuestion]);
-    console.log(trivia.answers[trivia.currentQuestion]);
-}
 
 function displayResults() {
     // hide the question, options, and countDown
