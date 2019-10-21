@@ -23,6 +23,11 @@ var trivia = {
         "Where is the House of Black and White, the training temple of the Faceless Men?",
         "Who was Ned Stark's predecessor as Robert Baratheon's Hand?",
         "How many kings and queens of Westeros did Lord Vary's serve?",
+        "Who was the leader of the Golden Company sellswords when Dany ransacked King’s Landing?",
+        "What is the name of the giant dragon-slaying crossbow that failed to protect King's Landing?",
+        "How was 'The Queen of Thorns' more commonly known?",
+        "Who said: 'You're shit at dying, you know that?",
+        "Grey Worm is the leader of which group?"
     ],
 
     choices: [
@@ -31,7 +36,12 @@ var trivia = {
         ["Dougal", "Vhagar", "Raegal", "Balerion"],
         ["Qarth", "Bravos", "Meeren", "No one knows"],
         ["Jamie Lannister", "Jon Arryn", "Tywin Lannister", "Ser Jorah Mormont"],
-        ['Two', "Three", "Four", "Five"]
+        ['Two', "Three", "Four", "Five"],
+        ['Wes Borland', 'Kiefer Sutherland', 'Harry Strickland', 'Robert Westland'],
+        ['Millipede', "The 'You're Making Me Very Cross(bow)'", "Scorpion", "Mantis"],
+        ['Cersei Lannister', 'Margaery Tyrell', "Olenna Tyrell", "E Jarvis Thribb"],
+        ["Sandor Clegane ('The Hound')", "King Robert", "Travis Bickle", "Harland Sanders"],
+        ["The Unthanks", "The Unjust", "The Unsullied", "The Understones"]
     ],
 
     answers: [
@@ -40,7 +50,12 @@ var trivia = {
         "Raegal",
         "Bravos",
         "Jon Arryn",
-        "Three"
+        "Three",
+        "Harry Strickland",
+        "Scorpion",
+        "Olenna Tyrell",
+        "Sandor Clegane ('The Hound')",
+        "The Usullied",
     ]
 }
 
