@@ -120,11 +120,6 @@ function showQuestions() {
         button.attr("answer", choicesArr[i]);
         $('#options').append(button);
     }
-
-    // for testing purposes only
-    console.log(trivia.questions[trivia.currentQuestion]);
-    console.log(trivia.choices[trivia.currentQuestion]);
-    console.log(trivia.answers[trivia.currentQuestion]);
 }
 
 function optionClicked() {
@@ -147,6 +142,7 @@ function optionClicked() {
         setTimeout(displayResults, 1000);
 
         // display a gif image
+        $('image-holder').html("<img src=" + trivia.images[0] + "width='400px'>");
 
         // display the correct answer
         $('#status').html('<h3>Correct!!!! ' + trivia.answers[trivia.currentQuestion] + '</h3>');
