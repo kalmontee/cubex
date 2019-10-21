@@ -46,12 +46,12 @@ var trivia = {
 
 function startGame() {
     // reset purposes
-    var intervalId;
-    var clockRunning = false;
-    var count = 15;
-    var correctAnswer = 0;
-    var wrongAnswer = 0;
-    var unAnswer = 0;
+    intervalId;
+    clockRunning = false;
+    count = 15;
+    correctAnswer = 0;
+    wrongAnswer = 0;
+    unAnswer = 0;
     trivia.currentQuestion = 0;
     clearInterval(intervalId);
 
@@ -60,7 +60,7 @@ function startGame() {
     $('#correct').html('');
     $('#incorrect').html('');
     $('#unAnswer').html('');
-
+    $('#status').hide();
 
     // inside start game function play the game-of-thrones intro (audio.play())
     audio.play();
@@ -79,6 +79,7 @@ function showQuestions() {
     $('#question').show();
     $('#options').show();
     $('.time').show();
+    $('#status').hide();
 
     // Set the count down for each question
     count = 15;
@@ -132,7 +133,7 @@ function optionClicked() {
         // display a gif image
 
         // display the correct answer
-        $('#status').html('<h3>Correct!!!! ' + trivia.answers[trivia.currentQuestion] + '</h3>').hide();
+        $('#status').html('<h3>Correct!!!! ' + trivia.answers[trivia.currentQuestion] + '</h3>');
 
     } else {
         // add +1 to wrongAnswer
@@ -147,7 +148,7 @@ function optionClicked() {
         // display a gif image
 
         // Display the correct answer
-        $('#status').html('<h3>Incorrect!!! The answer was ' + trivia.answers[trivia.currentQuestion] + '</h3>').hide();
+        $('#status').html('<h3>Incorrect!!! The answer was ' + trivia.answers[trivia.currentQuestion] + '</h3>');
     }
 }
 
