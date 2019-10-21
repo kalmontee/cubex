@@ -55,7 +55,7 @@ var trivia = {
         "Scorpion",
         "Olenna Tyrell",
         "Sandor Clegane ('The Hound')",
-        "The Usullied",
+        "The Unsullied",
     ]
 }
 
@@ -78,6 +78,7 @@ function startGame() {
     $('#status').hide();
 
     // inside start game function play the game-of-thrones intro (audio.play())
+    audio.loop = true;
     audio.play();
 
     // hide the start button once the user press start
