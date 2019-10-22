@@ -84,3 +84,49 @@ button:hover {
 #unAnswer {
     font-size: 25px;
 }
+
+
+/* Responsive */
+
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+    #question {
+        font-size: 30px;
+    }
+    #options {
+        font-size: 30px;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    #title {
+        font-size: 30px;
+        margin: 10px;
+    }
+    .time {
+        font-size: 30px;
+        margin: 0;
+    }
+    #question {
+        font-size: 25px;
+        margin: 10px 0;
+    }
+    #options {
+        font-size: 25px;
+        width: 100%;
+    }
+    #ending {
+        font-size: 25px;
+    }
+    #correct,
+    #incorrect,
+    #unAnswer {
+        font-size: 20px;
+    }
+    #status {
+        font-size: 20px;
+    }
+}
