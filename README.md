@@ -1,7 +1,7 @@
 
 # Totally Trivial Trivia Game!
 
-# How much of a Game of Thrones fan are you? Go on and take the challenge!!
+## How much of a Game of Thrones fan are you? Go on and take the challenge!!
 
 ### Instructions:
 * Press the start button to begin the trivia. You will have 15 seconds to answer each question.
