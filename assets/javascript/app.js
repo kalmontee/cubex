@@ -12,8 +12,8 @@ $('#start-game').click(startGame);
 $('#options').on('click', 'button', optionClicked);
 
 var trivia = {
-    images: ["images/night-king.gif", 'images/Arya.gif', "images/dracarys.gif", "images/changing-faces.gif", "images/ned-stark.gif", "images/Tyrion.gif"],
     currentQuestion: 0,
+    images: ["images/night-king.gif", 'images/Arya.gif', "images/dracarys.gif", "images/changing-faces.gif", "images/ned-stark.gif", "images/Tyrion.gif"],
 
     // questions, choices and answers
     questions: [
@@ -35,11 +35,11 @@ var trivia = {
         ["Myrys", "Wylis", "Horys", "Gladys"],
         ["Dougal", "Vhagar", "Raegal", "Balerion"],
         ["Qarth", "Bravos", "Meeren", "No one knows"],
-        ["Jamie Lannister", "Jon Arryn", "Tywin Lannister", "Ser Jorah Mormont"],
+        ["Jamie Lannister", "Tywin Lannister", "Ser Jorah Mormont", "Jon Arryn"],
         ['Two', "Three", "Four", "Five"],
         ['Wes Borland', 'Kiefer Sutherland', 'Harry Strickland', 'Robert Westland'],
-        ['Millipede', "The 'You're Making Me Very Cross(bow)'", "Scorpion", "Mantis"],
-        ['Cersei Lannister', 'Margaery Tyrell', "Olenna Tyrell", "E Jarvis Thribb"],
+        ['Millipede', "The 'You're Making Me Very Cross(bow)'", "Mantis", "Scorpion"],
+        ["Olenna Tyrell", 'Cersei Lannister', 'Margaery Tyrell', "E Jarvis Thribb"],
         ["Sandor Clegane ('The Hound')", "King Robert", "Travis Bickle", "Harland Sanders"],
         ["The Unthanks", "The Unjust", "The Unsullied", "The Understones"]
     ],
@@ -200,6 +200,9 @@ function timeRunning() {
 
         // hide trivia section
         $('#trivia').hide();
+
+        // pause the audio
+        audio.pause();
     }
 }
 
@@ -208,6 +211,8 @@ function displayResults() {
     $('#question').hide();
     $('#options').hide();
     $('.time').hide();
+
+    // Show the status when user clicks the correct or wrong answer
     $('#status').show();
 
     // increment to next currentQuestion
