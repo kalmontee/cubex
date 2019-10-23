@@ -13,7 +13,7 @@ $('#options').on('click', 'button', optionClicked);
 
 var trivia = {
     currentQuestion: 0,
-    images: ["images/night-king.gif", 'images/Arya.gif', "images/dracarys.gif", "images/changing-faces.gif", "images/ned-stark.gif", "images/Tyrion.gif"],
+    images: ["night-king.gif", 'Arya.gif', "dracarys.gif", "changing-faces.gif", "ned-stark.gif", "Tyrion.gif"],
 
     // questions, choices and answers
     questions: [
@@ -142,7 +142,7 @@ function optionClicked() {
         setTimeout(displayResults, 1000);
 
         // display a gif image
-        $('image-holder').html("<img src=" + trivia.images[0] + "width='400px'>");
+        $('#image-holder').html("<img src=assets/images/" + trivia.images[trivia.currentQuestion] + " width='400px'>");
 
         // display the correct answer
         $('#status').html('<h3>Correct!!!! ' + trivia.answers[trivia.currentQuestion] + '</h3>');
@@ -157,7 +157,9 @@ function optionClicked() {
 
         // set timeout to display results for one second
         setTimeout(displayResults, 1000);
+
         // display a gif image
+        $('#image-holder').html("<img src=assets/images/" + trivia.images[trivia.currentQuestion] + " width='400px'>");
 
         // Display the correct answer
         $('#status').html('<h3>Incorrect!!! The answer was ' + trivia.answers[trivia.currentQuestion] + '</h3>');
@@ -217,6 +219,7 @@ function displayResults() {
 
     // increment to next currentQuestion
     trivia.currentQuestion++;
+    trivia.images[trivia.currentQuestion]++;
 
     setTimeout(showQuestions, 3000);
 }
