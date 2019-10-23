@@ -96,6 +96,7 @@ function showQuestions() {
     $('#options').show();
     $('.time').show();
     $('#status').hide();
+    $('#image-holder').hide();
 
     // Set the count down for each question
     count = 15;
@@ -124,6 +125,7 @@ function showQuestions() {
 
 function optionClicked() {
     trivia.answers[trivia.currentQuestion];
+    trivia.images[trivia.currentQuestion];
 
     // setTimeout id variable;
     var timeoutId;
@@ -214,12 +216,12 @@ function displayResults() {
     $('#options').hide();
     $('.time').hide();
 
-    // Show the status when user clicks the correct or wrong answer
+    // Show the status and gif image when user clicks the correct or wrong answer
     $('#status').show();
+    $('#image-holder').show();
 
     // increment to next currentQuestion
     trivia.currentQuestion++;
-    trivia.images[trivia.currentQuestion]++;
 
     setTimeout(showQuestions, 3000);
 }
