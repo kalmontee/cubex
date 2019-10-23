@@ -13,7 +13,7 @@ $('#options').on('click', 'button', optionClicked);
 
 var trivia = {
     currentQuestion: 0,
-    images: ["night-king.gif", 'Arya.gif', "dracarys.gif", "changing-faces.gif", "ned-stark.gif", "Tyrion.gif"],
+    images: ["night-king.gif", 'Arya.gif', "dracarys.gif", "changing-faces.gif", "ned-stark.gif", "Tyrion.gif", "question-7.gif", "dragons.gif", "thorns.gif", "the-hound.gif", "grey-hound.gif"],
 
     // questions, choices and answers
     questions: [
@@ -223,5 +223,5 @@ function displayResults() {
     // increment to next currentQuestion
     trivia.currentQuestion++;
 
-    setTimeout(showQuestions, 3000);
+    setTimeout(showQuestions, 4000);
 }
